@@ -5,7 +5,7 @@ const formEvent = form.addEventListener("submit", (event) => {
     sendMail(mail);
 })
 const sendMail = (mail) => {
-    fetch('http://localhost:8080/send', {
+    fetch('https://manya-kalra.netlify.app/send', {
       method: "post", //2.
       body: mail, //3.
   
