@@ -1,4 +1,4 @@
-//const form= document.getElementById("contact-form");
+const form= document.getElementById("contact-form");
 const formEvent = form.addEventListener("submit", (event) => {
     event.preventDefault();
     let mail = new FormData(form);
