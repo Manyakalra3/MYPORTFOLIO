@@ -10,7 +10,7 @@ app.route("/").get(function (req, res) {
 app.use('/stylesheets',express.static(__dirname +'/stylesheets'));
 app.use('/js',express.static(__dirname +'/js'));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}...`);
 });
@@ -22,7 +22,7 @@ const transporter = nodemailer.createTransport({
     service:'gmail',
     auth: {
       user: process.env.EMAIL,
-      pass: process.env.PASS,
+      pass: process.env.PASSWORD,
     },
   });
  
@@ -57,7 +57,7 @@ const transporter = nodemailer.createTransport({
       transporter.sendMail(mail, (err, data) => {
         if (err) {
           console.log(err);
-          res.status(500).send("Something went wrong.");
+          res.status(500).send("oops! Something went wrong.");
         } else {
           res.status(200).send("Mail Successfully sent !! Thankyou for the feedback.");
         }
